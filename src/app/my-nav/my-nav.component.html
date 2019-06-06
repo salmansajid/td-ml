@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z6">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Trade Network</span>
+    </mat-toolbar>
+    <mat-tab-group dynamicHeight mat-align-tabs="end">
+      <mat-tab label="Trade Network">
+        <div class="example-large-box mat-elevation-z4">
+            <div class="row">
+                <mat-form-field>
+                    <mat-select placeholder="Select Data" (selectionChange)="ontitleChange($event.value)">
+                        <mat-option *ngFor="let c of comunity_title" [value]="c">
+                          {{c}}
+                        </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-select placeholder="Select Community" (selectionChange)="onChange($event.value)">
+                      <mat-option *ngFor="let d of communities" [value]="d">
+                        {{d}}
+                      </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+              <svg width="1200" height="500"></svg>
+        </div>
+      </mat-tab>
+      <mat-tab label="Predict">
+        <div class="example-large-box mat-elevation-z4">
+          Predict content
+        </div>
+      </mat-tab>
+      <mat-tab label="Segment">
+        <div class="example-large-box mat-elevation-z4">
+          Segment content
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
